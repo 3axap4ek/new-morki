@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 
 body{
     display: block;
@@ -7,8 +15,8 @@ body{
 
 .header{
   display: flex;
-  width: 100%;
-  height: 730px;  
+  width: 100vw;
+  height: 100vh;  
   background-image: url(img/header.jpg);
   background-size: 100% 100%; 
 }
@@ -140,7 +148,7 @@ body{
     
   }
   
-  .container{
+  .photo-gallery_container{
     width: 100%;
     display: flex;
     padding: 0 20px;
@@ -180,4 +188,103 @@ body{
   
   .hold{
     border: 5px solid red;
+  }
+
+  .offers {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .container-offers {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .sidebar > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .sidebar h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+  }
+  
+  .main-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .main-slide > div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #fff;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+  }
+  
+  button:hover {
+    color: #222;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .container-offers .controls button {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
+  }
+  
+  .container-offers .controls .down-button {
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .container-offers .controls .up-button {
+    transform: translateY(-100%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .fa-arrow-up::before{
+    content: "\2191";
+  }
+  
+  .fa-arrow-down::before{
+    content: "\2193";
   }
