@@ -281,10 +281,19 @@ body{
     border-bottom-right-radius: 5px;
   }
   
-  .fa-arrow-up::before{
-    content: "\2191";
-  }
+.offers{
+  width: 100vw;
+  height: 100vh;
+}
+
+.offers-slide{
+  background: center center / contain no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.offers-slide__head--style-reason{
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
   
-  .fa-arrow-down::before{
-    content: "\2193";
-  }
+}
