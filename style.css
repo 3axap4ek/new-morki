@@ -11,6 +11,7 @@
 body{
     display: block;
    margin: 0 auto;
+   
 }
 
 .header{
@@ -18,7 +19,7 @@ body{
   width: 100vw;
   height: 100vh;  
   background-image: url(img/header.jpg);
-  background-size: 100% 100%; 
+  background-size: 100% 100%;
 }
 
 .sticky-hat{
@@ -90,11 +91,11 @@ body{
 
 .text-header{
   display: flex;
-  width: 700px;
-  height: 500px;
+  width: 100vw;
+  height: 100vh;
   flex-direction: column;
   justify-content: center ;
-  margin: 200px auto;
+  margin: 0 auto;
 
 }
 
@@ -129,10 +130,24 @@ body{
 
 .header-button{
     border-radius: 20px;
-    background-image: url(img/knopka-nahyi.png);
+    background: transparent;
     padding: 10px 10px 10px 10px;
-    border: solid black 1px;
+  
+    border:  3px rgb(255, 255, 255, 0.4) solid;
+
 }
+
+
+.header-button:hover{
+  border: solid rgb(255, 255, 255) 3px;
+}
+
+.text-button{
+  color: #fff;
+
+}
+
+
 
 .photo-gallery {
     font-family: 'Muli', sans-serif;
@@ -141,6 +156,7 @@ body{
     background:linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.3)), 
      url('https://images.unsplash.com/photo-1431683535750-2b9b2371efb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
     background-size: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -194,106 +210,95 @@ body{
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     width: 100vw;
-  }
-  
-  .container-offers {
     position: relative;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
   }
   
-  .sidebar {
-    height: 100%;
-    width: 35%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.5s ease-in-out;
-  }
   
-  .sidebar > div {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-  }
-  
-  .sidebar h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-    margin-top: -30px;
-  }
-  
-  .main-slide {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 35%;
-    width: 65%;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .main-slide > div {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 100%;
-    width: 100%;
-  }
-  
-  button {
-    background-color: #fff;
-    border: none;
-    color: #aaa;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 15px;
-  }
-  
-  button:hover {
-    color: #222;
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  .container-offers .controls button {
-    position: absolute;
-    left: 35%;
-    top: 50%;
-    z-index: 100;
-  }
-  
-  .container-offers .controls .down-button {
-    transform: translateX(-100%);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  
-  .container-offers .controls .up-button {
-    transform: translateY(-100%);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-  
-.offers{
-  width: 100vw;
-  height: 100vh;
-}
-
 .offers-slide{
-  background: center center / contain no-repeat;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
 }
 
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
 
 .offers-slide__head--style-reason{
-  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
+  background-size: 100%;
+}
+
+
+.offers-slide__head--style-property{
+  background-image: url('https://images.unsplash.com/photo-1529781833076-5f422f69d1af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
+  background-size: 100%;
+}
+
+.offers-slide__head--style-life{
+  background-image: url('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-size: 100%;
+}
+
+.offers-slide__head--style-stonks{
+  background-image: url('https://images.unsplash.com/photo-1601382270349-49c15bddf738?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-size: 100%;
+}
+
+.offers-slide__head--style-capital{
+  background-image: url('http://baikal-info.ru/sites/default/files/mat-kapital-na-stroitelstvo-doma-1.jpg');
+  background-size: 100%;
+}
+
+.offers-slide__head--style-create{
+  background-image: url('https://pravoved-plus.msk.ru/wp-content/uploads/1507330922_131.jpg');
+  background-size: 100%;
+}
+
+.offers-text__main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offers-text{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+ 
+}
+
+
+.text-head{
+  color: #fff;
+  font-size: 58px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 1px black ;
+}
+
+.head-text{
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+  text-shadow: 2px 2px 2px black ;
   
 }
