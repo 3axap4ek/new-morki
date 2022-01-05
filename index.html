@@ -211,11 +211,39 @@
 
   </div>
 
+</div> 
+
+<div class="form-at">
+    <div class="validate-input-at w-50" data-validate="Обязательное поле">
+        <input class="input-at" type="text" name="name-at" placeholder="Ваше имя" />
+        <span class="focus-input-at"></span>
+    </div>
+    <div class="validate-input-at w-50" data-validate="Обязательное поле">
+        <input class="input-at" type="text" name="email-at" placeholder="Ваш телефон или email" />
+        <span class="focus-input-at"></span>
+    </div>
+    <div class="validate-input-at" data-validate="Обязательное поле">
+        <textarea class="input-at" name="message-at" placeholder="Ваше сообщение"></textarea>
+        <span class="focus-input-at"></span>
+    </div>
+    <input checked="checked" class="input-at" id="checkbox-at" type="checkbox" name="checkbox-at" onchange="document.getElementById('submit-at').disabled = !this.checked;" />
+    <label for="checkbox-at">
+        Настоящим подтверждаю, что я ознакомлен и согласен с <a href="#rules">пользовательским соглашением</a>
+    </label> 
+    <input type="hidden" name="subject-at" value="Тема формы">
+    <button id="submit-at" class="form-at-btn">Отправить</button>
 </div>
+<div class="result-at"></div>
 
  
 
  <script src="js/photo-gallery.js"></script>
  <script src="js/offers-slides.js"></script>
+ <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script type="text/javascript">
+  if (window.jQuery) console.log("jQuery подключен");
+  else console.log("jQuery не подключен");
+</script>
+ <script src="js/feedback.js"></script>
 </body>
 </html>
