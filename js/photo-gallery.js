@@ -2,23 +2,23 @@
 
 document.addEventListener('DOMContentLoaded', () =>{
     function slidesPlugin(activeSlide = 0){
-    const slides = document.querySelectorAll('.slide')
+    const slides = document.querySelectorAll('.slide');
 
-   slides[activeSlide].classList.add('active')
+   slides[activeSlide].classList.add('active');
 
 for (const slide of slides) {
    slide.addEventListener('click', () => {
-       clearActiveClasses()
-       slide.classList.add('active')
+       clearActiveClasses();
+       slide.classList.add('active');
    })
 }
 
 function clearActiveClasses() {
    slides.forEach((slide) =>{
-       slide.classList.remove('active')
+       slide.classList.remove('active');
    })
 }
 }
 
-slidesPlugin(0)
+slidesPlugin(0);
 });

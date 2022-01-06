@@ -233,7 +233,25 @@
     <input type="hidden" name="subject-at" value="Тема формы">
     <button id="submit-at" class="form-at-btn">Отправить</button>
 </div>
+
+<div class="phone-tel">
+  <button class="tel">
+    <svg class="telephone-icon">
+      <use xlink:href="img/phone.svg#phone"></use>
+  </svg>  
+  </button>           
+
+</div>
 <div class="result-at"></div>
+
+<form name = "MyForm" id = "callbacks" action = "" method = "post">
+  <input name = "name" type = "text" placeholder = "Ваше имя" /><br/><br/>
+  <input name = "phone" type = "tel" placeholder = "Ваш телефон" /><br/><br/>
+  <textarea name = "body" placeholder = "Ваше сообщение"></textarea><br/><br/>
+  <input id = "submit" type = "submit" name = "done"/>
+</form>
+<div id = "erconts" style = "display: none">
+</div>
 
  
 
@@ -245,5 +263,7 @@
   else console.log("jQuery не подключен");
 </script>
  <script src="js/feedback.js"></script>
+ <script src="js/feedback-btn.js"></script>
+ <script src="js/feedback-in-ajax.js"></script>
 </body>
 </html>

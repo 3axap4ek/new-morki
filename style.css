@@ -11,7 +11,7 @@
 body{
     display: block;
    margin: 0 auto;
-   
+   top: auto;
 }
 
 .header{
@@ -238,27 +238,27 @@ body{
 
 
 .offers-slide__head--style-property{
-  background-image: url('https://images.unsplash.com/photo-1529781833076-5f422f69d1af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1529781833076-5f422f69d1af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
   background-size: 100% 100%;
 }
 
 .offers-slide__head--style-life{
-  background-image: url('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   background-size: 100% 100%;
 }
 
 .offers-slide__head--style-stonks{
-  background-image: url('https://images.unsplash.com/photo-1601382270349-49c15bddf738?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1601382270349-49c15bddf738?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   background-size: 100% 100%;
 }
 
 .offers-slide__head--style-capital{
-  background-image: url('http://baikal-info.ru/sites/default/files/mat-kapital-na-stroitelstvo-doma-1.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://baikal-info.ru/sites/default/files/mat-kapital-na-stroitelstvo-doma-1.jpg');
   background-size: 100% 100%;
 }
 
 .offers-slide__head--style-create{
-  background-image: url('https://pravoved-plus.msk.ru/wp-content/uploads/1507330922_131.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://pravoved-plus.msk.ru/wp-content/uploads/1507330922_131.jpg');
   background-size: 100% 100%;
 }
 
@@ -319,6 +319,9 @@ body{
     letter-spacing: 0;    
     background: #f9f9f9;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 10px 18px rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: -500px;
+    z-index: 9;
 }
 .form-at * {
     box-sizing: border-box;
@@ -369,6 +372,7 @@ input.input-at:focus {
     border-color: transparent;
 }
 .focus-input-at {
+  display: block;
     position: absolute;
     display: block;
     width: calc(100% + 2px);
@@ -499,4 +503,39 @@ input.input-at:focus {
         visibility: visible;
         opacity: 1;
     }
+}
+
+
+.phone-tel{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.tel{
+  border: transparent;
+  background: transparent;
+}
+
+.telephone-icon{
+  width: 50px;
+  height: 50px;
+}
+
+.telephone-icon:hover{
+  border:#fff solid 2px;
+  border-radius: 9px;
+}
+
+
+.activeone{
+  display: fixed;
+}
+
+.none{
+  display: none;
+
 }
