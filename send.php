@@ -1,52 +1,41 @@
-<?
- 
-if(isset($_POST["name"]))
-{
-        if(isset($_POST["name"]))
-        {
-                $name = $_POST["name"];
+
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $to = "vasha@pochta.ru";    // Куда идет письмо
+        $from = "info@my-site.ru";    // От кого идет письмо
+        $name = $_POST['name-at'];
+        $email = $_POST['email-at'];
+        $message = $_POST['message-at'];
+        $subject =    $_POST['subject-at'];
+        $return_arr = array();
+        // Еще раз проверим заполненные поля формы. 
+        // Эту проверку можно удалить или удалить проверку на JS
+        if($name=="" || $email=="" || $message=="" || $subject=="") {
+            $return_arr["frm_check"] = 'error';
+            $return_arr["msg"] = "Пожалуйста, заполните все поля!";            
+        }     
+        // Проверка на плохие слова. Если не мучают хулиганы, можно ее удалить.
+        $badwords = array('предложение', 'купить', 'раскрутка'); 
+        $banstring = ($message != str_ireplace($badwords,"XX",$message))? true: false; if ($banstring) { 
+            $return_arr["frm_check"] = 'error';
+            $return_arr["msg"] = "Есть запрещенные слова";    
         }
-        if(isset($_POST["phone"]))
-        {
-                $phone= $_POST["phone"];
-        }
-        if(isset($_POST["body"]))
-        {
-                $body = $_POST["body"];
-        }
- 
-        if($name=="" or $phone=="" or $body=="")
-        { // Проверяем на заполненность всех полей.
-                echo "Пожалуйста, заполните все поля";
-        }
-        else
-        {
-                $ip=$_SERVER["REMOTE_ADDR"]; // Вычисляем ip пользователя
-                $brose=$_SERVER["HTTP_USER_AGENT"]; // Вычисляем браузер пользователя
-                $to = "uvanov97@mail.ru"; // Ваш email адрес
-                $subject = "Сообщение c сайта a-devel.com"; // тема письма
-                $headers .= "Content-Type: text/html;
-                ";
-                $headers .= "Отправитель: Посетитель сайта"; // Отправитель письма
-                $message = "
-                Имя: $name<br>
-                Телефоны: $phone<br>
-                Текст: $body<br><br>
- 
-                IP отправителя: $ip<br>
-                Браузер отправителя: $brose<br>
-                ";
- 
-                $send = mail($to, $subject, $message, $headers);
-                if ($send == "true")
-                {
-                        echo "Ваше сообщение отправлено. Мы ответим вам в ближайшее время.";
-                }
-                else
-                {
-                        echo "Не удалось отправить, попробуйте снова!";
-                }
-        }
-}
- 
+        
+        if ($return_arr["frm_check"] != 'error') {            
+            $subject = "From my-site.ru: $subject";
+$message = "Сообщение от " .$name. "\n
+Контакт: " .$email. "\n        
+Сообщение:\n" .$message;
+            
+$headers = "Content-Type: text/plain; charset=utf-8\r\n";
+$headers .= "From: $from\r\n";
+$headers .= "Reply-To: $from\r\n";    
+            
+            if (!mail($to, $subject, $message, $headers)) {
+                $return_arr["frm_check"] = 'error';
+                $return_arr["msg"] = "Сообщение не отправлено, ошибка почтового сервера!";    
+            }        
+        }        
+        echo json_encode($return_arr);
+    }
 ?>

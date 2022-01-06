@@ -1,7 +1,9 @@
 'use strict';
 
 const formAt = document.querySelector('.form-at'),
-      telBtn = document.querySelector('.tel');
+      telBtn = document.querySelector('.tel'),
+      phoneTel = document.querySelector('.phone-tel'),
+      krestikBtn = document.querySelector('.krest');
      
     //   none = getComputedStyle(formAt).display,
     //   active = getComputedStyle(formAt).display.fixed;
@@ -12,20 +14,47 @@ const formAt = document.querySelector('.form-at'),
     //   let format = getComputedStyle(formAt).display;
     // //   formAt.classList.toggle("none");
     
-     telBtn.onclick =function(){
+    //  telBtn.onclick =function(){
         
-        // formAt.classList.toggle("activeone");
-        if($(formAt).css('bottom') == '-500px'){
+    //     // formAt.classList.toggle("activeone");
+    //     if($(formAt).css('bottom') == '-600px'){
             
-            $(formAt).animate({bottom: '0px'}, 1000);
-          
-        } else if($(formAt).css('bottom') == '0px'){
-            // formAt.classList.remove("none");
-            $(formAt).animate({bottom: '-500px'}, 1000);
-        }
+    //         $(formAt).animate({bottom: '20px'}, 1000);
+    //         phoneTel.style.display = 'none';
+    //     } else if($(formAt).css('bottom') == '20px'){
+    //         // formAt.classList.remove("none");
+    //         $(formAt).animate({bottom: '-600px'}, 1000);
+    //     }
         
         
-     }; 
+    //  }; 
+
+
+     telBtn.addEventListener('click', ()=> {
+        if($(formAt).css('bottom') == '-600px'){
+            getFeedBack (); }
+
+            krestikBtn.addEventListener('click', ()=>{
+                if($(formAt).css('bottom') == '20px'){
+                  cancelFeedBack (); 
+                }
+            });
+
+        });
+  
+  
+
+     function cancelFeedBack (){
+        $(formAt).animate({bottom: '-600px'}, 1000);
+        phoneTel.style.display = 'block';
+     }
+    
+     function getFeedBack (){
+        $(formAt).animate({bottom: '20px'}, 1000);
+        phoneTel.style.display = 'none';
+     }
+
+
    
 // telBtn.onclick = function(){
 //     if(format == 'none'){
