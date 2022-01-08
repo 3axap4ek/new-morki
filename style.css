@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:wght@300&family=Oswald&display=swap');
+
+
 
 * {
   box-sizing: border-box;
@@ -10,13 +13,14 @@
 
 body{
     display: block;
+   width: 100%;
    margin: 0 auto;
-   top: auto;
+   
 }
 
 .header{
   display: flex;
-  width: 100vw;
+  width: 99vw;
   height: 100vh;  
   background-image: url(img/header.jpg);
   background-size: 100% 100%;
@@ -26,7 +30,7 @@ body{
     display: flex;
     justify-content: space-between;
     position: absolute;
-    width: 100%;
+    width: 99vw;
     height: 150px;
 }
 
@@ -91,8 +95,8 @@ body{
 
 .text-header{
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: center ;
   margin: 0 auto;
@@ -155,7 +159,7 @@ body{
     background:linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.3)), 
      url('https://images.unsplash.com/photo-1431683535750-2b9b2371efb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
     background-size: 100%;
-    width: 100vw;
+    width: 99vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -207,14 +211,14 @@ body{
 
   .offers {
     font-family: 'Roboto', sans-serif;
+    width: 99vw;
     height: 100vh;
-    width: 100vw;
-    position: relative;
+    /* position: relative; */
   }
   
   
 .offers-slide{
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -262,7 +266,7 @@ body{
 }
 
 .offers-text__main{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -270,17 +274,17 @@ body{
 }
 
 .offers-text{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
- 
 }
 
 
 .text-head{
   color: #fff;
+  font-family: 'Merriweather', serif;
   font-size: 58px;
   text-transform: uppercase;
   display: flex;
@@ -292,6 +296,7 @@ body{
 
 .head-text{
   color: #fff;
+  font-family: 'Merriweather', serif;
   font-size: 40px;
   display: flex;
   flex-direction: column;
@@ -299,6 +304,10 @@ body{
   align-items: center;
   text-align: center;
   text-shadow: 2px 2px 2px black ;
+}
+
+.head-text:last-child{
+  margin-bottom: 30px;
 }
 
 ::-webkit-input-placeholder {font-size: 16px;}
@@ -329,6 +338,7 @@ body{
 .form-at * {
     box-sizing: border-box;
     font-family: Verdana, sans-serif;    
+    
 }
 .validate-input-at,
 .no-validate-input-at {
@@ -400,21 +410,28 @@ input.input-at:focus {
     display: block;
     padding: 0 40px;
     height: 50px;
-    background-color: #337AB7;
-    border-radius: 2px;
+    background: transparent;
+    /* background-color: #337AB7; */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
     font-size: 16px;
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
     line-height: 1.2;
-    transition: all 0.4s;
+    /* transition: all 0.4s; */
     margin: 0 auto;
     outline: none;
-    border: none;
-    cursor: pointer;        
+    /* border: none; */
+    cursor: pointer;       
 }
+
+
+
 .form-at-btn:hover {
-    background-color: #333333;
+    
+    border: 2px solid white;
+    border-radius: 20px;
 }
 .form-at-btn[disabled] {
     opacity: .6;
@@ -474,7 +491,7 @@ input.input-at:focus {
     margin: 0 0 20px 34px;
     font-size: 13px;
     line-height: 24px;
-    color: #333333;
+    color: #ffffff;
 }
 .form-at input[type=checkbox] + label:before {
     box-sizing: border-box;
@@ -489,11 +506,11 @@ input.input-at:focus {
 }
 .form-at input[type=checkbox]:checked + label:before{
     content: '\2714';
-    color:#337AB7;
+    color:#ffffff;
     font-size: 14px;
     text-align: center;
     font-weight: bold;
-    border: 2px solid #337AB7;
+    border: 2px solid #ffffff;
 }
 @media (max-width: 768px) {
     .validate-input-at.w-50 {
@@ -537,35 +554,40 @@ input.input-at:focus {
 .krestik{
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   text-align: center;
   position: absolute;
   background: transparent;
-  border:  3px rgba(0, 0, 0, 0.9) solid;
-  border-radius: 20px;
-  opacity: 0.1;
+  
+  color: white;
+  
+  /* opacity: 0.1; */
   width: 40px;
   height: 40px;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 10px;
   z-index: 10;
-  
 }
+  
+
 
 .krest{
-  /* display: flex;
-  justify-content: center;
-  align-items:center;
-  text-align: center; */
   border: transparent;
   background: transparent;
-  font-size: 30px;
+  border-radius: 20px;
+  border: 3px rgba(255, 255, 255, 0.5) solid;
+  font-size: 20px;
   z-index: 11;
-  /* bottom: 3px;
-  right: 6px; 
-  top: 0.5px; */
-  color:black;
+  color: white;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.krest:hover{
+  border: 3px rgba(255, 255, 255, 0.9) solid;
+  top: 10px;
+  right: 10px;
 }
 
 
@@ -578,3 +600,16 @@ input.input-at:focus {
 
 }
 
+.text__form-at{
+  display: flex;
+  position: relative;
+  color: white;
+  width: 100%;
+  height: 30px;
+  height: 90px;
+  z-index: 10;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+  z-index: 9;
+}

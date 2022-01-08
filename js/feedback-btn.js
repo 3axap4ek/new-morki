@@ -1,10 +1,43 @@
 'use strict';
-
-const formAt = document.querySelector('.form-at'),
+window.addEventListener('DOMContentLoaded', ()=>{
+   const formAt = document.querySelector('.form-at'),
       telBtn = document.querySelector('.tel'),
       phoneTel = document.querySelector('.phone-tel'),
       krestikBtn = document.querySelector('.krest');
+      telBtn.addEventListener('click', ()=> {
+         if($(formAt).css('bottom') == '-600px'){
+             getFeedBack (); }
+ 
+             krestikBtn.addEventListener('click', ()=>{
+                 if($(formAt).css('bottom') == '20px'){
+                     cancelFeedBack ();
+                 }
+             });
+ 
+         });
+   
+   
+ 
+      function cancelFeedBack (){
+         $(formAt).animate({bottom: '-600px'}, 1000);
+         setTimeout(() => {
+            phoneTel.style.display = 'block';
+         }, 1000);
+      }
      
+      function getFeedBack (){
+         $(formAt).animate({bottom: '20px'}, 1000);
+            phoneTel.style.display = 'none';
+       
+      }
+});
+
+ 
+
+
+
+
+
     //   none = getComputedStyle(formAt).display,
     //   active = getComputedStyle(formAt).display.fixed;
 
@@ -30,29 +63,6 @@ const formAt = document.querySelector('.form-at'),
     //  }; 
 
 
-     telBtn.addEventListener('click', ()=> {
-        if($(formAt).css('bottom') == '-600px'){
-            getFeedBack (); }
-
-            krestikBtn.addEventListener('click', ()=>{
-                if($(formAt).css('bottom') == '20px'){
-                  cancelFeedBack (); 
-                }
-            });
-
-        });
-  
-  
-
-     function cancelFeedBack (){
-        $(formAt).animate({bottom: '-600px'}, 1000);
-        phoneTel.style.display = 'block';
-     }
-    
-     function getFeedBack (){
-        $(formAt).animate({bottom: '20px'}, 1000);
-        phoneTel.style.display = 'none';
-     }
 
 
    
