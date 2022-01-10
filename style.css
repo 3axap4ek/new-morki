@@ -215,7 +215,31 @@ body{
     height: 100vh;
     /* position: relative; */
   }
-  
+
+.offers-arrows {
+  display: none;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  position: absolute;
+  z-index: 8;
+  fill:white;
+}
+
+.offers-arrows_left-arrow {
+  margin-left: -600px;
+
+}
+
+.offers-arrows_right-arrow {
+  margin-right: -600px;
+}
+.arrows {
+  height: 50px;
+  width: 50px;
+}
+
   
 .offers-slide{
   width: 99vw;
