@@ -18,6 +18,11 @@ body{
    
 }
 
+.wrapper{
+  overflow: hidden;
+  min-width: 1300px;
+}
+
 .header{
   display: flex;
   width: 99vw;
@@ -280,7 +285,7 @@ body{
 }
 
 .offers-slide__head--style-capital{
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://baikal-info.ru/sites/default/files/mat-kapital-na-stroitelstvo-doma-1.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://u.9111s.ru/uploads/202103/29/e7cf22c006c5b85b3adb229f4e6f156b.jpg');
   background-size: 100% 100%;
 }
 
